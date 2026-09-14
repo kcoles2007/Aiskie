@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>For You — A Birthday Mix</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<div class="app">
+
+  <!-- Left rail -->
+  <div class="sidebar">
+    <div class="brand">
+      <span class="brand-mark">♥</span>
+      <span class="brand-name">For&nbsp;Her</span>
+    </div>
+    <nav class="side-nav">
+      <a href="index.html" class="side-item">← Home</a>
+    </nav>
+    <div class="side-notelist" id="sideNoteList"><!-- quick-jump list injected by script.js --></div>
+  </div>
+
+  <!-- Main content: the note -->
+  <main class="main main-note" id="mainScroll">
+    <div class="note-banner" id="noteBanner">
+      <img id="noteBannerImg" class="note-banner-img" alt="" onerror="this.style.display='none'">
+      <div class="note-banner-fade"></div>
+      <a href="index.html" class="banner-back-link" aria-label="Back to home">←</a>
+    </div>
+
+    <section class="note-page" id="notePage">
+      <p class="note-eyebrow" id="noteEyebrow">From Friends</p>
+      <h1 class="note-title" id="noteTitle">Card title</h1>
+      <p class="note-subheader" id="noteSubheader">a friend</p>
+      <p class="note-body" id="noteBody">Message text goes here.</p>
+
+      <div class="note-song-tag">
+        <span class="note-song-note">now playing</span>
+        <span class="note-song-name" id="noteSongName">Song — Artist</span>
+      </div>
+
+      <div class="note-nav">
+        <a class="note-nav-btn" id="notePrevLink">← Previous</a>
+        <a class="note-nav-btn" id="noteNextLink">Next →</a>
+      </div>
+    </section>
+  </main>
+
+  <!-- Right panel: smaller Now Playing, active on this page -->
+  <aside class="now-playing now-playing-compact" id="nowPlaying">
+    <div class="np-header">
+      <span>Now Playing</span>
+      <button class="np-toggle" id="npToggle" aria-label="Hide player">✕</button>
+    </div>
+
+    <div class="np-active" id="npActive">
+      <div class="np-art" id="npArt"></div>
+      <div class="np-track-info">
+        <p class="np-track-title" id="npTrackTitle">Track title</p>
+        <p class="np-track-artist" id="npTrackArtist">Artist</p>
+      </div>
+      <div class="np-progress-row">
+        <span class="np-time" id="npCurrentTime">0:00</span>
+        <input type="range" id="npSeek" class="np-seek" min="0" max="100" value="0" step="0.1" />
+        <span class="np-time" id="npDuration">0:00</span>
+      </div>
+      <div class="np-controls">
+        <button class="np-btn np-btn-ghost" id="npPrev" aria-label="Previous">⏮</button>
+        <button class="np-btn np-btn-main" id="npPlayPause" aria-label="Play or pause">▶</button>
+        <button class="np-btn np-btn-ghost" id="npNext" aria-label="Next">⏭</button>
+      </div>
+    </div>
+
+    <audio id="audioEl" preload="none"></audio>
+  </aside>
+
+</div>
+
+<!-- Bottom mini-player: shown whenever the right panel is closed -->
+<div class="mini-player" id="miniPlayer">
+  <button class="mini-expand" id="miniExpand" aria-label="Show player">▲</button>
+  <div class="mini-art" id="miniArt"></div>
+  <div class="mini-info">
+    <p class="mini-title" id="miniTitle">Track title</p>
+    <p class="mini-artist" id="miniArtist">Artist</p>
+  </div>
+  <button class="mini-btn" id="miniPlayPause" aria-label="Play or pause">▶</button>
+</div>
+
+<script src="script.js"></script>
+</body>
+</html>
